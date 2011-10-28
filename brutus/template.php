@@ -171,7 +171,7 @@ function brutus_preprocess_node(&$vars) {
     $classes[] = 'node-mine'; // Node is authored by current user.
   }
   
-  $vars['submitted'] = t('Submitted by !username on ', array('!username' => $vars['name']));
+  $vars['submitted'] = t('Submitted by !username on', array('!username' => $vars['name']));
   $vars['submitted_date'] = t('!datetime', array('!datetime' => $vars['date']));
   $vars['submitted_pubdate'] = format_date($vars['created'], 'custom', 'Y-m-d\TH:i:s');
 }
@@ -181,12 +181,12 @@ function brutus_preprocess_node(&$vars) {
  * Add view type class (e.g., node, teaser, list, table)
  */
 function brutus_preprocess_views_view(&$vars) {
-  $vars['css_name'] = $vars['css_name'] .' view-style-'. drupal_clean_css_identifier(strtolower($vars['view']->plugin_name));
+  $vars['css_name'] = $vars['css_name'] . ' view-style-' . drupal_clean_css_identifier(strtolower($vars['view']->plugin_name));
 }
 
 // Add Zen Tabs styles
 if (theme_get_setting('brutus_tabs')) {
-  drupal_add_css( drupal_get_path('theme', 'brutus') .'/css/tabs.css');
+  drupal_add_css( drupal_get_path('theme', 'brutus') . '/css/tabs.css');
 }
 
 /*
@@ -261,7 +261,7 @@ function brutus_core_preprocess_comment(&$vars) {
  * 	  array The menu item to render.
  * 	@return
  * 	  string The rendered menu item.
- */ 	
+ */
 
 function brutus_menu_link(array $variables) {
   $element = $variables['element'];
@@ -332,13 +332,13 @@ function brutus_menu_local_tasks(&$variables) {
  *	  The string
  *	@return
  *	  The converted string
- */	
+ */
 function brutus_id_safe($string) {
   // Replace with dashes anything that isn't A-Z, numbers, dashes, or underscores.
   $string = strtolower(preg_replace('/[^a-zA-Z0-9_-]+/', '-', $string));
   // If the first character is not a-z, add 'n' in front.
   if (!ctype_lower($string{0})) { // Don't use ctype_alpha since its locale aware.
-    $string = 'id'. $string;
+    $string = 'id' . $string;
   }
   return $string;
 }
@@ -438,7 +438,7 @@ function brutus_preprocess_search_result(&$vars) {
   $vars['info'] = implode(' - ', $info);
 
   // Provide alternate search result template.
-  $vars['template_files'][] = 'search-result-'. $vars['module'];
+  $vars['template_files'][] = 'search-result-' . $vars['module'];
 }
 
 
