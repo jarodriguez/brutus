@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * @file
+ * Contains theme override functions and process & preprocess functions for ninesixtyfive
+ */
+
 // Auto-rebuild the theme registry during theme development.
 if (theme_get_setting('brutus_rebuild_registry')) {
   system_rebuild_theme_data();
@@ -89,7 +95,8 @@ function brutus_preprocess_html(&$vars) {
           array_pop($vars['classes_array']); // Remove 'section-node'
         }
         $vars['classes_array'][] = 'section-node-add'; // Add 'section-node-add'
-      } elseif (is_numeric(arg(1)) && (arg(2) == 'edit' || arg(2) == 'delete')) {
+      }
+      elseif (is_numeric(arg(1)) && (arg(2) == 'edit' || arg(2) == 'delete')) {
         if ($section == 'node') {
           array_pop($vars['classes_array']); // Remove 'section-node'
         }
