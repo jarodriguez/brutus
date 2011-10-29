@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Contains theme override functions and process & preprocess functions for ninesixtyfive
+ */
+
 function brutus_form_system_theme_settings_alter(&$form, $form_state) {
 
   /*
