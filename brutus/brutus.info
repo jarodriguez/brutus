@@ -27,6 +27,7 @@ features[] = secondary_menu
 
 stylesheets[all][] = css/brutus.css
 scripts[] = js/browser.js
+scripts[] = js/formalize.js
 //scripts[] = js/jquery.beforeafter.min.js
 
 settings[brutus_zen_tabs]             = 1
