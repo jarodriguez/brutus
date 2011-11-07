@@ -57,11 +57,11 @@ function brutus_preprocess_html(&$vars) {
   /* Add extra classes to body for more flexible theming */
 
   if ($has_main_menu or $has_secondary_menu) {
-    $vars['classes_array'][] = 'with-navigation';
+    $vars['classes_array'][] = 'two-sidebar';
   }
 
   if ($has_secondary_menu) {
-    $vars['classes_array'][] = 'with-subnav';
+    $vars['classes_array'][] = 'sidebar-right';
   }
 
   if (!empty($vars['page']['header_top'])) {
@@ -113,10 +113,6 @@ function brutus_preprocess_html(&$vars) {
 function brutus_preprocess_page(&$vars, $hook) {
   if (isset($vars['node_title'])) {
     $vars['title'] = $vars['node_title'];
-  }
-  // Adding a class to #page in wireframe mode
-  if (theme_get_setting('wireframe_mode')) {
-    $vars['classes_array'][] = 'wireframe-mode';
   }
   // Adding classes wether #navigation is here or not
   if (!empty($vars['main_menu']) or !empty($vars['sub_menu'])) {
