@@ -98,6 +98,11 @@ div.block:hover .edit {
   display: block;
 }
 
+/* line 93, ../../src/sass/partials/_reset.sass */
+.views-displays {
+  float: none;
+}
+
 /* Rollover edit links for blocks. */
 /* line 77, ../sass/default.sass */
 /* line 79, ../sass/default.sass */
