@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains theme override functions and process & preprocess functions for ninesixtyfive
+ * Contains theme override functions and process & preprocess functions
  */
 
 // Auto-rebuild the theme registry during theme development.
@@ -56,11 +56,17 @@ function brutus_preprocess_html(&$vars) {
 
   /* Add extra classes to body for more flexible theming */
 
-  if ($has_main_menu or $has_secondary_menu) {
+  if (!empty($vars['page']['left'])) {
     $vars['classes_array'][] = 'two-sidebar';
   }
+  if (!empty($vars['page']['right'])) {
+    $vars['classes_array'][] = 'two-sidebar';
+  }
+  if (!empty($vars['page']['left'])) {
+    $vars['classes_array'][] = 'sidebar-left';
+  }
 
-  if ($has_secondary_menu) {
+  if (!empty($vars['page']['right'])) {
     $vars['classes_array'][] = 'sidebar-right';
   }
 
@@ -207,9 +213,9 @@ function brutus_preprocess_comment_wrapper(&$vars) {
   $classes[] = 'comment-wrapper';
   
   // Provide skinr support.
-  if (module_exists('skinr')) {
+/*  if (module_exists('skinr')) {
     $classes[] = $vars['skinr'];
-  }
+}*/
   $vars['classes'] = implode(' ', $classes);
 }
 
